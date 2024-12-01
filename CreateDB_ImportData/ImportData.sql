@@ -1,9 +1,10 @@
 ﻿USE [SUSUSHISHI]
---------------------------------------------  IMPORT DATA  -------------------------------------------- 
+--------------------------------------------  IMPORT DATA  --------------------------------------------
+go
 -- ACCOUNT -- 
-/*
+
 BULK INSERT ACCOUNT
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\account_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\account_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -11,10 +12,10 @@ WITH
 	FIRSTROW = 2,
     CODEPAGE = '65001' -- UTF-8
 );
-*/
+
 -- AREA -- 
 BULK INSERT AREA
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\area_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\area_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -26,7 +27,7 @@ GO
 
 -- BRANCH_RATING --
 BULK INSERT BRANCH_RATING
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\branch_rating_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\branch_rating_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -42,7 +43,7 @@ insert into CARD_TYPE (TYPE, DISCOUNT_AMOUNT) values ('The gold', 500000);
 GO
 -- CUSTOMER --
 BULK INSERT CUSTOMER
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\customer_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\customer_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -54,7 +55,7 @@ WITH
 GO
 -- DELIVERY_ORDER --
 BULK INSERT DELIVERY_ORDER
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\dorder_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\dorder_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -65,7 +66,7 @@ WITH
 GO
 -- DEPARTMENT -- 
 BULK INSERT DEPARTMENT
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\department_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\department_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -130,7 +131,7 @@ VALUES
 GO
 -- DISH_AVAILABLE --
 BULK INSERT DISH_AVAILABLE
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\dish_available_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\dish_available_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -141,7 +142,7 @@ WITH
 GO
 -- EMPLOYEE --
 BULK INSERT EMPLOYEE
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\employee_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\employee_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -152,7 +153,7 @@ WITH
 GO
 -- INVOICE --
 BULK INSERT INVOICE
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\invoice_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\invoice_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -163,7 +164,7 @@ WITH
 GO
 -- MEMBERSHIP_CARD --
 BULK INSERT MEMBERSHIP_CARD
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\membership_card_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\membership_card_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -175,7 +176,7 @@ WITH
 GO
 -- OFFLINE_ORDER --
 BULK INSERT OFFLINE_ORDER
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\oforder_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\oforder_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -186,7 +187,7 @@ WITH
 GO
 -- ONLINE_ACCESS_HISTORY --
 BULK INSERT ONLINE_ACCESS_HISTORY
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\online_access_history_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\online_access_history_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -197,7 +198,7 @@ WITH
 GO
 -- ONLINE_ORDER --
 BULK INSERT ONLINE_ORDER
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\oorder_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\oorder_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -208,7 +209,7 @@ WITH
 GO
 -- ORDER --
 BULK INSERT dbo.[ORDER]
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\order_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\order_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -219,7 +220,7 @@ WITH
 GO
 -- ORDER_DISH --
 BULK INSERT ORDER_DISH
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\order_dish_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\order_dish_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -230,7 +231,7 @@ WITH
 GO
 -- RESTAURANT_BRANCH --
 BULK INSERT RESTAURANT_BRANCH
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\restaurant_branch_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\restaurant_branch_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -241,7 +242,7 @@ WITH
 GO
 -- TABLE_ --
 BULK INSERT TABLE_
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\table_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\table_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -252,7 +253,7 @@ WITH
 GO
 -- WORK_HISTORY --
 BULK INSERT WORK_HISTORY
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\Sushi_Restaurant\SCRIPT_DATA(CSV)\work_history_data.csv'
+FROM 'D:\lhyen\HCMUS\3rd_year\HK1\CSDL_NC\Sushi_Restaurant\CreateDB_ImportData\work_history_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
