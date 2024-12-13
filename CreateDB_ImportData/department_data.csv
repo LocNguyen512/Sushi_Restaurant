@@ -1,106 +1,106 @@
 DEPARTMENT_ID,DEPARTMENT_NAME,BRANCH_ID
-D001,Quan ly,B001
-D002,Thu ngan,B001
-D003,Le tan,B001
-D004,Phuc vu ban,B001
-D005,Dau bep,B001
-D006,Phu bep,B001
-D007,Nhan vien giao hang,B001
-D008,Quan ly,B002
-D009,Thu ngan,B002
-D010,Le tan,B002
-D011,Phuc vu ban,B002
-D012,Dau bep,B002
-D013,Phu bep,B002
-D014,Nhan vien giao hang,B002
-D015,Quan ly,B003
-D016,Thu ngan,B003
-D017,Le tan,B003
-D018,Phuc vu ban,B003
-D019,Dau bep,B003
-D020,Phu bep,B003
-D021,Nhan vien giao hang,B003
-D022,Quan ly,B004
-D023,Thu ngan,B004
-D024,Le tan,B004
-D025,Phuc vu ban,B004
-D026,Dau bep,B004
-D027,Phu bep,B004
-D028,Nhan vien giao hang,B004
-D029,Quan ly,B005
-D030,Thu ngan,B005
-D031,Le tan,B005
-D032,Phuc vu ban,B005
-D033,Dau bep,B005
-D034,Phu bep,B005
-D035,Nhan vien giao hang,B005
-D036,Quan ly,B006
-D037,Thu ngan,B006
-D038,Le tan,B006
-D039,Phuc vu ban,B006
-D040,Dau bep,B006
-D041,Phu bep,B006
-D042,Nhan vien giao hang,B006
-D043,Quan ly,B007
-D044,Thu ngan,B007
-D045,Le tan,B007
-D046,Phuc vu ban,B007
-D047,Dau bep,B007
-D048,Phu bep,B007
-D049,Nhan vien giao hang,B007
-D050,Quan ly,B008
-D051,Thu ngan,B008
-D052,Le tan,B008
-D053,Phuc vu ban,B008
-D054,Dau bep,B008
-D055,Phu bep,B008
-D056,Nhan vien giao hang,B008
-D057,Quan ly,B009
-D058,Thu ngan,B009
-D059,Le tan,B009
-D060,Phuc vu ban,B009
-D061,Dau bep,B009
-D062,Phu bep,B009
-D063,Nhan vien giao hang,B009
-D064,Quan ly,B010
-D065,Thu ngan,B010
-D066,Le tan,B010
-D067,Phuc vu ban,B010
-D068,Dau bep,B010
-D069,Phu bep,B010
-D070,Nhan vien giao hang,B010
-D071,Quan ly,B011
-D072,Thu ngan,B011
-D073,Le tan,B011
-D074,Phuc vu ban,B011
-D075,Dau bep,B011
-D076,Phu bep,B011
-D077,Nhan vien giao hang,B011
-D078,Quan ly,B012
-D079,Thu ngan,B012
-D080,Le tan,B012
-D081,Phuc vu ban,B012
-D082,Dau bep,B012
-D083,Phu bep,B012
-D084,Nhan vien giao hang,B012
-D085,Quan ly,B013
-D086,Thu ngan,B013
-D087,Le tan,B013
-D088,Phuc vu ban,B013
-D089,Dau bep,B013
-D090,Phu bep,B013
-D091,Nhan vien giao hang,B013
-D092,Quan ly,B014
-D093,Thu ngan,B014
-D094,Le tan,B014
-D095,Phuc vu ban,B014
-D096,Dau bep,B014
-D097,Phu bep,B014
-D098,Nhan vien giao hang,B014
-D099,Quan ly,B015
-D100,Thu ngan,B015
-D101,Le tan,B015
-D102,Phuc vu ban,B015
-D103,Dau bep,B015
-D104,Phu bep,B015
-D105,Nhan vien giao hang,B015
+D001,Nhân viên giao hàng,B001
+D002,Lễ tân,B001
+D003,Thu ngân,B001
+D004,Đầu bếp,B001
+D005,Phụ bếp,B001
+D006,Phục vụ bàn,B001
+D007,Quản lý chi nhánh,B001
+D008,Nhân viên giao hàng,B002
+D009,Lễ tân,B002
+D010,Thu ngân,B002
+D011,Đầu bếp,B002
+D012,Phụ bếp,B002
+D013,Phục vụ bàn,B002
+D014,Quản lý chi nhánh,B002
+D015,Nhân viên giao hàng,B003
+D016,Lễ tân,B003
+D017,Thu ngân,B003
+D018,Đầu bếp,B003
+D019,Phụ bếp,B003
+D020,Phục vụ bàn,B003
+D021,Quản lý chi nhánh,B003
+D022,Nhân viên giao hàng,B004
+D023,Lễ tân,B004
+D024,Thu ngân,B004
+D025,Đầu bếp,B004
+D026,Phụ bếp,B004
+D027,Phục vụ bàn,B004
+D028,Quản lý chi nhánh,B004
+D029,Nhân viên giao hàng,B005
+D030,Lễ tân,B005
+D031,Thu ngân,B005
+D032,Đầu bếp,B005
+D033,Phụ bếp,B005
+D034,Phục vụ bàn,B005
+D035,Quản lý chi nhánh,B005
+D036,Nhân viên giao hàng,B006
+D037,Lễ tân,B006
+D038,Thu ngân,B006
+D039,Đầu bếp,B006
+D040,Phụ bếp,B006
+D041,Phục vụ bàn,B006
+D042,Quản lý chi nhánh,B006
+D043,Nhân viên giao hàng,B007
+D044,Lễ tân,B007
+D045,Thu ngân,B007
+D046,Đầu bếp,B007
+D047,Phụ bếp,B007
+D048,Phục vụ bàn,B007
+D049,Quản lý chi nhánh,B007
+D050,Nhân viên giao hàng,B008
+D051,Lễ tân,B008
+D052,Thu ngân,B008
+D053,Đầu bếp,B008
+D054,Phụ bếp,B008
+D055,Phục vụ bàn,B008
+D056,Quản lý chi nhánh,B008
+D057,Nhân viên giao hàng,B009
+D058,Lễ tân,B009
+D059,Thu ngân,B009
+D060,Đầu bếp,B009
+D061,Phụ bếp,B009
+D062,Phục vụ bàn,B009
+D063,Quản lý chi nhánh,B009
+D064,Nhân viên giao hàng,B010
+D065,Lễ tân,B010
+D066,Thu ngân,B010
+D067,Đầu bếp,B010
+D068,Phụ bếp,B010
+D069,Phục vụ bàn,B010
+D070,Quản lý chi nhánh,B010
+D071,Nhân viên giao hàng,B011
+D072,Lễ tân,B011
+D073,Thu ngân,B011
+D074,Đầu bếp,B011
+D075,Phụ bếp,B011
+D076,Phục vụ bàn,B011
+D077,Quản lý chi nhánh,B011
+D078,Nhân viên giao hàng,B012
+D079,Lễ tân,B012
+D080,Thu ngân,B012
+D081,Đầu bếp,B012
+D082,Phụ bếp,B012
+D083,Phục vụ bàn,B012
+D084,Quản lý chi nhánh,B012
+D085,Nhân viên giao hàng,B013
+D086,Lễ tân,B013
+D087,Thu ngân,B013
+D088,Đầu bếp,B013
+D089,Phụ bếp,B013
+D090,Phục vụ bàn,B013
+D091,Quản lý chi nhánh,B013
+D092,Nhân viên giao hàng,B014
+D093,Lễ tân,B014
+D094,Thu ngân,B014
+D095,Đầu bếp,B014
+D096,Phụ bếp,B014
+D097,Phục vụ bàn,B014
+D098,Quản lý chi nhánh,B014
+D099,Nhân viên giao hàng,B015
+D100,Lễ tân,B015
+D101,Thu ngân,B015
+D102,Đầu bếp,B015
+D103,Phụ bếp,B015
+D104,Phục vụ bàn,B015
+D105,Quản lý chi nhánh,B015

@@ -1,16 +1,16 @@
-BRANCH_ID,BRANCH_PHONE,BRANCH_NAME,BRANCH_ADDRESS,OPEN_TIME,CLOSE_TIME,CAR_PARK,MOTORBIKE_PARK,MANAGER_ID,AREA_ID
-B001,915168348,Nha hang Ha Noi 1,Cau Giay Ha Noi,8:40:00,21:55:00,NO,YES,,A01
-B002,993761677,Nha hang Ha Noi 2,Ha Dong Ha Noi,9:10:47,21:51:07,YES,NO,,A01
-B003,975847390,Nha hang Ha Noi 3,Ba Dinh Ha Noi,7:44:34,20:11:26,YES,YES,,A01
-B004,975948500,Nha hang Ho Chi Minh 1,Go Vap Ho Chi Minh,9:21:12,19:49:50,YES,NO,,A02
-B005,945169706,Nha hang Ho Chi Minh 2,Quan 1 Ho Chi Minh,8:36:15,22:18:06,YES,NO,,A02
-B006,996061066,Nha hang Ho Chi Minh 3,Quan 3 Ho Chi Minh,8:41:33,22:09:53,NO,YES,,A02
-B007,971432375,Nha hang Da Nang 1,Ngu Hanh Son Da Nang,9:23:18,21:59:10,NO,NO,,A03
-B008,981277681,Nha hang Can Tho 1,O Mon Can Tho,6:33:33,21:10:50,YES,NO,,A04
-B009,981304273,Nha hang Hai Phong 1,Duong Kinh Hai Phong,6:55:07,22:39:45,NO,YES,,A05
-B010,969688472,Nha hang Nha Trang 1,Ninh Hoa Nha Trang,9:34:11,21:14:51,NO,YES,,A06
-B011,918907868,Nha hang Hue 1,Kim Long Hue,7:42:52,20:39:20,YES,NO,,A07
-B012,916833018,Nha hang Quang Ninh 1,Dong Trieu Quang Ninh,6:44:12,20:50:21,NO,YES,,A08
-B013,966733857,Nha hang Binh Duong 1,Tan Uyen Binh Duong,6:03:37,21:06:22,YES,YES,,A09
-B014,979937060,Nha hang Binh Duong 2,Thuan An Binh Duong,8:31:24,21:57:23,NO,NO,,A09
-B015,966733842,Nha hang Da Nang 2,Son Tra Da Nang,8:00:00,21:00:00,NO,YES,,A03
+BRANCH_ID,BRANCH_PHONE,BRANCH_NAME,BRANCH_ADDRESS,OPEN_TIME,CLOSE_TIME,CAR_PARK,MOTORBIKE_PARK,MANAGER_ID,AREA_NAME
+B001,+84 24 2809257,Nhà hàng Đà Nẵng 1,Ngũ Hành Sơn - Đà Nẵng,07:30:00,15:30:00,0,0,E014917,Đà Nẵng
+B002,+84-87-482 5231,Nhà hàng Huế 1,Kim Long - Huế,14:30:00,22:30:00,1,0,E014846,Huế
+B003,+84 24 6756814,Nhà hàng Cần Thơ 1,Ô Môn - Cần Thơ,09:00:00,19:00:00,1,1,E014999,Cần Thơ
+B004,(09)157-1906,Nhà hàng Bình Dương 1,Tân Uyên - Bình Dương,10:30:00,18:00:00,1,0,E014996,Bình Dương
+B005,+84-20-425203,Nhà hàng Hải Phòng 1,Dương Kinh - Hải Phòng,14:00:00,22:00:00,0,1,E014863,Hải Phòng
+B006,(09)393-8867,Nhà hàng Nha Trang 1,Ninh Hòa - Nha Trang,07:00:00,16:30:00,1,1,E014969,Nha Trang
+B007,09 3915580,Nhà hàng Hà Nội 1,Cầu Giấy - Hà Nội,07:00:00,16:00:00,0,0,E014906,Hà Nội
+B008,(05) 2549 6858,Nhà hàng Bình Dương 2,Thuận An - Bình Dương,08:30:00,16:30:00,1,0,E014897,Bình Dương
+B009,00 8286 6458,Nhà hàng Thành phố Hồ Chí Minh 1,Quận 1 - Thành phố Hồ Chí Minh,11:30:00,19:30:00,1,1,E014986,Thành phố Hồ Chí Minh
+B010,07 5090 7354,Nhà hàng Thành phố Hồ Chí Minh 2,Quận 3 - Thành phố Hồ Chí Minh,07:00:00,17:30:00,1,1,E014767,Thành phố Hồ Chí Minh
+B011,(08) 7488 1116,Nhà hàng Hà Nội 2,Hà Đông - Hà Nội,08:00:00,16:00:00,1,1,E014620,Hà Nội
+B012,+84-89-880715,Nhà hàng Đà Nẵng 2,Sơn Trà - Đà Nẵng,08:30:00,18:00:00,1,1,E014959,Đà Nẵng
+B013,+84-06-539394,Nhà hàng Thành phố Hồ Chí Minh 3,Quận Bình Thạnh - Thành phố Hồ Chí Minh,10:30:00,20:30:00,1,1,E014914,Thành phố Hồ Chí Minh
+B014,03 0252 0489,Nhà hàng Quảng Ninh 1,Đông Triều - Quảng Ninh,14:30:00,24:00:00,1,0,E014901,Quảng Ninh
+B015,07 3558138,Nhà hàng Hà Nội 3,Ba Đình - Hà Nội,06:30:00,14:30:00,0,0,E014942,Hà Nội

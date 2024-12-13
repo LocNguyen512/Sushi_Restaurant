@@ -1,0 +1,16 @@
+BRANCH_ID,BRANCH_PHONE,BRANCH_NAME,BRANCH_ADDRESS,OPEN_TIME,CLOSE_TIME,CAR_PARK,MOTORBIKE_PARK,MANAGER_ID,AREA_NAME
+B001,+84 24 2809257,Nhà hàng Đà Nẵng 1,Ngũ Hành Sơn - Đà Nẵng,07:30:00,15:30:00,0,0,,Đà Nẵng
+B002,+84-87-482 5231,Nhà hàng Huế 1,Kim Long - Huế,14:30:00,22:30:00,1,0,,Huế
+B003,+84 24 6756814,Nhà hàng Cần Thơ 1,Ô Môn - Cần Thơ,09:00:00,19:00:00,1,1,,Cần Thơ
+B004,(09)157-1906,Nhà hàng Bình Dương 1,Tân Uyên - Bình Dương,10:30:00,18:00:00,1,0,,Bình Dương
+B005,+84-20-425203,Nhà hàng Hải Phòng 1,Dương Kinh - Hải Phòng,14:00:00,22:00:00,0,1,,Hải Phòng
+B006,(09)393-8867,Nhà hàng Nha Trang 1,Ninh Hòa - Nha Trang,07:00:00,16:30:00,1,1,,Nha Trang
+B007,09 3915580,Nhà hàng Hà Nội 1,Cầu Giấy - Hà Nội,07:00:00,16:00:00,0,0,,Hà Nội
+B008,(05) 2549 6858,Nhà hàng Bình Dương 2,Thuận An - Bình Dương,08:30:00,16:30:00,1,0,,Bình Dương
+B009,00 8286 6458,Nhà hàng Thành phố Hồ Chí Minh 1,Quận 1 - Thành phố Hồ Chí Minh,11:30:00,19:30:00,1,1,,Thành phố Hồ Chí Minh
+B010,07 5090 7354,Nhà hàng Thành phố Hồ Chí Minh 2,Quận 3 - Thành phố Hồ Chí Minh,07:00:00,17:30:00,1,1,,Thành phố Hồ Chí Minh
+B011,(08) 7488 1116,Nhà hàng Hà Nội 2,Hà Đông - Hà Nội,08:00:00,16:00:00,1,1,,Hà Nội
+B012,+84-89-880715,Nhà hàng Đà Nẵng 2,Sơn Trà - Đà Nẵng,08:30:00,18:00:00,1,1,,Đà Nẵng
+B013,+84-06-539394,Nhà hàng Thành phố Hồ Chí Minh 3,Quận Bình Thạnh - Thành phố Hồ Chí Minh,10:30:00,20:30:00,1,1,,Thành phố Hồ Chí Minh
+B014,03 0252 0489,Nhà hàng Quảng Ninh 1,Đông Triều - Quảng Ninh,14:30:00,24:00:00,1,0,,Quảng Ninh
+B015,07 3558138,Nhà hàng Hà Nội 3,Ba Đình - Hà Nội,06:30:00,14:30:00,0,0,,Hà Nội
