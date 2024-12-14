@@ -40,10 +40,13 @@ branch_ids = [f"B{i:03}" for i in range(1, 16)]
 
 # Hàm tạo dữ liệu mở cửa và đóng cửa
 def generate_open_close_time():
-    open_hour = random.randint(6, 14)  # Giờ mở cửa từ 6h đến 14h
+    open_hour = random.randint(6, 8)  # Giờ mở cửa từ 6h đến 8h sáng
+    close_hour = open_hour + random.randint(13, 17)  # Đóng cửa từ 13 đến 17 giờ sau
     open_minute = random.choice([0, 30])
-    close_hour = open_hour + 8 + random.randint(0, 2)  # Đóng cửa ít nhất sau 8h
     close_minute = random.choice([0, 30])
+    if close_hour > 23:  # Đảm bảo giờ đóng cửa không quá 23h
+        close_hour = 23
+        close_minute = 0
     return f"{open_hour:02}:{open_minute:02}:00", f"{close_hour:02}:{close_minute:02}:00"
 
 # Phân bổ thành phố cho các branch_id
@@ -53,7 +56,7 @@ random.shuffle(city_pool)
 # Sinh dữ liệu
 data = []
 used_address = {city: [] for city in address_options.keys()}
-used_name_suffix = {city: set() for city in address_options.keys()}
+used_name_suffix = {city: 0 for city in address_options.keys()}
 
 for i, branch_id in enumerate(branch_ids):
     area_name = city_pool[i]
@@ -68,11 +71,9 @@ for i, branch_id in enumerate(branch_ids):
     # Tạo số điện thoại
     branch_phone = fake.phone_number()
 
-    # Tạo tên nhà hàng với số thứ tự không trùng
-    available_suffixes = {1, 2, 3} - used_name_suffix[area_name]
-    name_suffix = random.choice(list(available_suffixes))
-    used_name_suffix[area_name].add(name_suffix)
-    branch_name = f"Nhà hàng {area_name} {name_suffix}"
+    # Tạo tên nhà hàng với số thứ tự tăng dần
+    used_name_suffix[area_name] += 1
+    branch_name = f"Nhà hàng {area_name} {used_name_suffix[area_name]}"
 
     # Tạo giờ mở cửa và đóng cửa
     open_time, close_time = generate_open_close_time()

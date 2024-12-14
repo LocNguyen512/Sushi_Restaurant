@@ -24,10 +24,10 @@ def generate_table_data(branch_ids):
     table_data = []
     for branch_id in branch_ids:
         for table_num in range(1, 51):
-            # Xác định table_status với xác suất: 60% Đang phục vụ, 20% Còn trống, 20% Được đặt trước
+            # Xác định table_status với xác suất: 45% Đang phục vụ, 35% Còn trống, 20% Được đặt trước
             table_status = random.choices(
                 ["Đang phục vụ", "Còn trống", "Được đặt trước"],
-                weights=[60, 20, 20],
+                weights=[45, 35, 20],
                 k=1
             )[0]
 
