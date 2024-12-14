@@ -1,7 +1,7 @@
+from faker import Faker
+from datetime import date, timedelta
 import csv
 import random
-from faker import Faker
-from datetime import datetime, timedelta
 
 # Khởi tạo Faker với ngôn ngữ tiếng Việt
 fake = Faker('vi_VN')
@@ -16,10 +16,11 @@ def read_department_ids():
     return department_data
 
 # Tạo dữ liệu employee
-
 def generate_employee_data(department_data, num_employees=15000):
     employees = []
     department_salaries = {}
+    current_date = date.today()  # Lấy ngày hiện tại
+    min_start_date = date(2015, 1, 1)  # Ngày 1/1/2015
 
     # Gán salary cho các department
     for department in department_data:
@@ -37,14 +38,29 @@ def generate_employee_data(department_data, num_employees=15000):
     for i in range(1, num_employees + 1):
         employee_id = f"E{i:06d}"
         full_name = fake.name()
-        
-        # Random ngày sinh và tính toán
-        dob = fake.date_of_birth(minimum_age=18, maximum_age=45)
-        start_date = dob + timedelta(days=random.randint(18 * 365, 50 * 365))
-        termination_date = None
 
-        if i not in branch_employee_ids and random.random() > 0.8:  # 20% có termination_date
+        # Random ngày sinh
+        dob = fake.date_of_birth(minimum_age=18, maximum_age=45)
+
+        # Xác định START_DATE_WORK
+        if random.random() <= 0.8:  # 80% ngày >= 1/1/2015
+            start_date = min_start_date + timedelta(days=random.randint(0, (current_date - min_start_date).days))
+        else:
+            start_date = dob + timedelta(days=18 * 365)  # Tính từ ngày sinh đủ 18 năm
+            if start_date >= min_start_date:
+                start_date = min_start_date - timedelta(days=random.randint(1, 365))
+
+        # Đảm bảo START_DATE_WORK - DOB >= 18 năm
+        if (start_date - dob).days < 18 * 365:
+            start_date = dob + timedelta(days=18 * 365)
+
+        # Xác định TERMINATION_DATE
+        termination_date = None
+        if random.random() > 0.6:  # 40% có giá trị
             termination_date = start_date + timedelta(days=random.randint(1, (45 - 18) * 365))
+            # Đảm bảo TERMINATION_DATE - DOB <= 45 năm
+            if (termination_date - dob).days > 45 * 365 or termination_date >= current_date:
+                termination_date = None
 
         # Gán department_id
         if i in branch_employee_ids:

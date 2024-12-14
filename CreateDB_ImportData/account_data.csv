@@ -1,99 +1,99 @@
 ACCOUNT_ID,USERNAME,PASSWORD,ROLE,EMPLOYEE_ID,CUSTOMER_ID
-A001,achang,123,Quản lý chi nhánh,E014742,
-A002,greenwilliam,123,Quản lý chi nhánh,E000522,
-A003,thull,123,Quản lý chi nhánh,E002182,
-A004,nhoward,123,Quản lý chi nhánh,E008043,
-A005,juancampos,123,Quản lý chi nhánh,E008783,
-A006,vanessa89,123,Quản lý chi nhánh,E006825,
-A007,kyleblair,123,Quản lý chi nhánh,E004566,
-A008,thomas15,123,Quản lý chi nhánh,E005924,
-A009,ostewart,123,Quản lý chi nhánh,E008717,
-A010,tammywoods,123,Quản lý chi nhánh,E006723,
-A011,bryan80,123,Quản lý chi nhánh,E003931,
-A012,cortezraymond,123,Quản lý chi nhánh,E013060,
-A013,salazarmaria,123,Quản lý chi nhánh,E008752,
-A014,john51,123,Quản lý chi nhánh,E012538,
-A015,sallywalker,123,Quản lý chi nhánh,E006020,
-A016,lindawest,123,Nhân viên,E003576,
-A017,kaisernancy,123,Nhân viên,E009373,
-A018,jrodriguez,123,Nhân viên,E014485,
-A019,jasmine85,123,Nhân viên,E011725,
-A020,tamaramorrison,123,Nhân viên,E012917,
-A021,sean96,123,Nhân viên,E001900,
-A022,barbara42,123,Nhân viên,E009687,
-A023,lorijohnson,123,Nhân viên,E014083,
-A024,thomas12,123,Nhân viên,E008876,
-A025,sandrakirby,123,Nhân viên,E003471,
-A026,hmassey,123,Nhân viên,E005157,
-A027,aimee33,123,Nhân viên,E001954,
-A028,criley,123,Nhân viên,E008621,
-A029,skeller,123,Nhân viên,E004550,
-A030,christopher91,123,Nhân viên,E009719,
-A031,vmatthews,123,Nhân viên,E012725,
-A032,johndennis,123,Nhân viên,E001146,
-A033,thorntonnathan,123,Nhân viên,E001451,
-A034,marvincabrera,123,Nhân viên,E011264,
-A035,loganmelissa,123,Nhân viên,E007005,
-A036,brandonberry,123,Nhân viên,E003948,
-A037,johnsoncynthia,123,Nhân viên,E007615,
-A038,myersmitchell,123,Nhân viên,E004458,
-A039,johnsonandrew,123,Nhân viên,E007801,
-A040,jennifermendoza,123,Nhân viên,E004124,
-A041,gilesandrew,123,Nhân viên,E000801,
-A042,qoliver,123,Nhân viên,E011739,
-A043,walkerdeborah,123,Nhân viên,E002976,
-A044,ryan08,123,Nhân viên,E006669,
-A045,gwilliams,123,Nhân viên,E001513,
-A046,wgonzalez,123,Nhân viên,E008052,
-A047,kmassey,123,Nhân viên,E005314,
-A048,heidiharris,123,Nhân viên,E008962,
-A049,kramereric,123,Nhân viên,E009551,
-A050,matthewking,123,Nhân viên,E001735,
-A051,awade,123,Nhân viên,E003880,
-A052,kmaldonado,123,Nhân viên,E003546,
-A053,deborah64,123,Nhân viên,E003177,
-A054,annsmith,123,Nhân viên,E011917,
-A055,rogersbrandon,123,Nhân viên,E007211,
-A056,dennis75,123,Nhân viên,E005101,
-A057,emily99,123,Nhân viên,E009491,
-A058,jenniferhughes,123,Nhân viên,E005385,
-A059,fpoole,123,Nhân viên,E008116,
-A060,wheelerholly,123,Nhân viên,E010006,
-A061,johnwalsh,123,Khách hàng,,041771C
-A062,rpage,123,Khách hàng,,002269C
-A063,sjohnson,123,Khách hàng,,039600C
-A064,tbarton,123,Khách hàng,,010259C
-A065,martincaleb,123,Khách hàng,,038589C
-A066,seandyer,123,Khách hàng,,086076C
-A067,hensontroy,123,Khách hàng,,079426C
-A068,mary06,123,Khách hàng,,009217C
-A069,amymccarty,123,Khách hàng,,093132C
-A070,monroedavid,123,Khách hàng,,084763C
-A071,moraleserika,123,Khách hàng,,072588C
-A072,aaron00,123,Khách hàng,,039869C
-A073,leecharlene,123,Khách hàng,,044900C
-A074,morganramirez,123,Khách hàng,,046277C
-A075,craignash,123,Khách hàng,,052594C
-A076,bburton,123,Khách hàng,,068443C
-A077,robin14,123,Khách hàng,,000314C
-A078,desireeroth,123,Khách hàng,,027585C
-A079,darin24,123,Khách hàng,,016208C
-A080,williamsjamie,123,Khách hàng,,096392C
-A081,angela59,123,Khách hàng,,078277C
-A082,mathissusan,123,Khách hàng,,002395C
-A083,djoseph,123,Khách hàng,,057054C
-A084,iwatson,123,Khách hàng,,031307C
-A085,jaredmatthews,123,Khách hàng,,068637C
-A086,taylorjoseph,123,Khách hàng,,089690C
-A087,kristine15,123,Khách hàng,,018747C
-A088,williamsfrank,123,Khách hàng,,022877C
-A089,michael82,123,Khách hàng,,059292C
-A090,danny30,123,Khách hàng,,062089C
-A091,hayden81,123,Khách hàng,,056173C
-A092,richard54,123,Khách hàng,,034648C
-A093,zwells,123,Khách hàng,,038544C
-A094,david17,123,Khách hàng,,037412C
-A095,vjohnson,123,Khách hàng,,007020C
+A001,achang,123,Quản lý chi nhánh,E007961,
+A002,greenwilliam,123,Quản lý chi nhánh,E005364,
+A003,thull,123,Quản lý chi nhánh,E010475,
+A004,nhoward,123,Quản lý chi nhánh,E007460,
+A005,juancampos,123,Quản lý chi nhánh,E008300,
+A006,vanessa89,123,Quản lý chi nhánh,E002157,
+A007,kyleblair,123,Quản lý chi nhánh,E000352,
+A008,thomas15,123,Quản lý chi nhánh,E003238,
+A009,ostewart,123,Quản lý chi nhánh,E009353,
+A010,tammywoods,123,Quản lý chi nhánh,E006820,
+A011,bryan80,123,Quản lý chi nhánh,E006863,
+A012,cortezraymond,123,Quản lý chi nhánh,E009927,
+A013,salazarmaria,123,Quản lý chi nhánh,E010938,
+A014,john51,123,Quản lý chi nhánh,E014695,
+A015,sallywalker,123,Quản lý chi nhánh,E012730,
+A016,lindawest,123,Nhân viên,E005015,
+A017,kaisernancy,123,Nhân viên,E011734,
+A018,jrodriguez,123,Nhân viên,E006122,
+A019,jasmine85,123,Nhân viên,E002193,
+A020,tamaramorrison,123,Nhân viên,E014084,
+A021,sean96,123,Nhân viên,E005057,
+A022,barbara42,123,Nhân viên,E014096,
+A023,lorijohnson,123,Nhân viên,E011558,
+A024,thomas12,123,Nhân viên,E012061,
+A025,sandrakirby,123,Nhân viên,E012545,
+A026,hmassey,123,Nhân viên,E013940,
+A027,aimee33,123,Nhân viên,E004543,
+A028,criley,123,Nhân viên,E012898,
+A029,skeller,123,Nhân viên,E007873,
+A030,christopher91,123,Nhân viên,E008708,
+A031,vmatthews,123,Nhân viên,E005422,
+A032,johndennis,123,Nhân viên,E006527,
+A033,thorntonnathan,123,Nhân viên,E010467,
+A034,marvincabrera,123,Nhân viên,E006818,
+A035,loganmelissa,123,Nhân viên,E005652,
+A036,brandonberry,123,Nhân viên,E002595,
+A037,johnsoncynthia,123,Nhân viên,E010359,
+A038,myersmitchell,123,Nhân viên,E001791,
+A039,johnsonandrew,123,Nhân viên,E003577,
+A040,jennifermendoza,123,Nhân viên,E013954,
+A041,gilesandrew,123,Nhân viên,E010460,
+A042,qoliver,123,Nhân viên,E008860,
+A043,walkerdeborah,123,Nhân viên,E005021,
+A044,ryan08,123,Nhân viên,E000556,
+A045,gwilliams,123,Nhân viên,E013508,
+A046,wgonzalez,123,Nhân viên,E010383,
+A047,kmassey,123,Nhân viên,E012851,
+A048,heidiharris,123,Nhân viên,E002605,
+A049,kramereric,123,Nhân viên,E004316,
+A050,matthewking,123,Nhân viên,E001235,
+A051,awade,123,Nhân viên,E011935,
+A052,kmaldonado,123,Nhân viên,E001355,
+A053,deborah64,123,Nhân viên,E002529,
+A054,annsmith,123,Nhân viên,E002804,
+A055,rogersbrandon,123,Nhân viên,E011488,
+A056,dennis75,123,Nhân viên,E005009,
+A057,emily99,123,Nhân viên,E006926,
+A058,jenniferhughes,123,Nhân viên,E008604,
+A059,fpoole,123,Nhân viên,E001643,
+A060,wheelerholly,123,Nhân viên,E004025,
+A061,johnwalsh,123,Khách hàng,,077290C
+A062,rpage,123,Khách hàng,,092023C
+A063,sjohnson,123,Khách hàng,,091836C
+A064,tbarton,123,Khách hàng,,043631C
+A065,martincaleb,123,Khách hàng,,026491C
+A066,seandyer,123,Khách hàng,,022707C
+A067,hensontroy,123,Khách hàng,,022337C
+A068,mary06,123,Khách hàng,,062129C
+A069,amymccarty,123,Khách hàng,,025359C
+A070,monroedavid,123,Khách hàng,,033531C
+A071,moraleserika,123,Khách hàng,,001037C
+A072,aaron00,123,Khách hàng,,028436C
+A073,leecharlene,123,Khách hàng,,070639C
+A074,morganramirez,123,Khách hàng,,046989C
+A075,craignash,123,Khách hàng,,089610C
+A076,bburton,123,Khách hàng,,044264C
+A077,robin14,123,Khách hàng,,001330C
+A078,desireeroth,123,Khách hàng,,062583C
+A079,darin24,123,Khách hàng,,096177C
+A080,williamsjamie,123,Khách hàng,,022719C
+A081,angela59,123,Khách hàng,,019302C
+A082,mathissusan,123,Khách hàng,,032985C
+A083,djoseph,123,Khách hàng,,037878C
+A084,iwatson,123,Khách hàng,,067851C
+A085,jaredmatthews,123,Khách hàng,,093920C
+A086,taylorjoseph,123,Khách hàng,,096743C
+A087,kristine15,123,Khách hàng,,029106C
+A088,williamsfrank,123,Khách hàng,,012246C
+A089,michael82,123,Khách hàng,,000122C
+A090,danny30,123,Khách hàng,,099755C
+A091,hayden81,123,Khách hàng,,068342C
+A092,richard54,123,Khách hàng,,006421C
+A093,zwells,123,Khách hàng,,021946C
+A094,david17,123,Khách hàng,,035305C
+A095,vjohnson,123,Khách hàng,,077116C
 A096,samanthasims,123,Quản lý công ty,,
 A097,odrake,123,Quản lý công ty,,
 A098,joneschristophe,123,Quản lý công ty,,
