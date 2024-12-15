@@ -294,76 +294,7 @@ ADD CONSTRAINT FK_Account_Employee FOREIGN KEY (EMPLOYEE_ID) REFERENCES EMPLOYEE
 
 
 -------------------------------------- IMPORT DATA---------------------------------
--- 1. ACCOUNT -- 
-BULK INSERT ACCOUNT
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\account_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
--- 2. CUSTOMER --
-BULK INSERT CUSTOMER
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\customer_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
--- 3. DEPARTMENT -- 
-BULK INSERT DEPARTMENT
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\department_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
--- 4. DISH_AVAILABLE --
-BULK INSERT DISH_AVAILABLE
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\dish_available_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
-
--- 5. DISH --
-BULK INSERT DISH
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\dish_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
-
--- 6. EMPLOYEE --
-BULK INSERT EMPLOYEE
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\employee_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
-
--- 7. RESTAURANT_BRANCH --
+-- RESTAURANT_BRANCH --
 BULK INSERT RESTAURANT_BRANCH
 FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\restaurant_branch_data.csv'
 WITH
@@ -375,7 +306,7 @@ WITH
 );
 GO
 
--- 8. TABLE_ --
+-- TABLE_ --
 BULK INSERT TABLE_
 FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\table_data.csv'
 WITH
@@ -387,11 +318,153 @@ WITH
 );
 GO
 
+-- DISH --
+BULK INSERT DISH
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\dish_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
 
-/*
--- AREA -- 
-BULK INSERT AREA
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\area_data.csv'
+-- DISH_AVAILABLE --
+BULK INSERT DISH_AVAILABLE
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\dish_available_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- DEPARTMENT -- 
+BULK INSERT DEPARTMENT
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\department_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- EMPLOYEE --
+BULK INSERT EMPLOYEE
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\employee_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- WORK_HISTORY --
+BULK INSERT WORK_HISTORY
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\work_history_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- CUSTOMER --
+BULK INSERT CUSTOMER
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\customer_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- ACCOUNT -- 
+BULK INSERT ACCOUNT
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\account_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- ORDER --
+BULK INSERT dbo.[ORDER]
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\order_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- OFFLINE_ORDER --
+BULK INSERT OFFLINE_ORDER
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\oforder_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- ONLINE_ORDER --
+BULK INSERT ONLINE_ORDER
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\oorder_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- DELIVERY_ORDER --
+BULK INSERT DELIVERY_ORDER
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\dorder_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- ORDER_DISH --
+BULK INSERT ORDER_DISH
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\order_dish_data.csv'
+WITH
+(
+    FIELDTERMINATOR = ',',
+    ROWTERMINATOR = '\n',
+	FIRSTROW = 2,
+    CODEPAGE = '65001' -- UTF-8
+);
+GO
+
+-- INVOICE --
+BULK INSERT INVOICE
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\invoice_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -412,39 +485,7 @@ WITH
     CODEPAGE = '65001' -- UTF-8
 );
 GO
--- CARD_TYPE --
-insert into CARD_TYPE (TYPE, DISCOUNT_AMOUNT) values ('The thanh vien', 100000);
-insert into CARD_TYPE (TYPE, DISCOUNT_AMOUNT) values ('The silver', 200000);
-insert into CARD_TYPE (TYPE, DISCOUNT_AMOUNT) values ('The gold', 500000);
-GO
 
-
-GO
--- DELIVERY_ORDER --
-BULK INSERT DELIVERY_ORDER
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\dorder_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
-
-
-GO
--- INVOICE --
-BULK INSERT INVOICE
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\invoice_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
 -- MEMBERSHIP_CARD --
 BULK INSERT MEMBERSHIP_CARD
 FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\membership_card_data.csv'
@@ -457,17 +498,7 @@ WITH
 );
 
 GO
--- OFFLINE_ORDER --
-BULK INSERT OFFLINE_ORDER
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\oforder_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
+
 -- ONLINE_ACCESS_HISTORY --
 BULK INSERT ONLINE_ACCESS_HISTORY
 FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\online_access_history_data.csv'
@@ -479,45 +510,11 @@ WITH
     CODEPAGE = '65001' -- UTF-8
 );
 GO
--- ONLINE_ORDER --
-BULK INSERT ONLINE_ORDER
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\oorder_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
--- ORDER --
-BULK INSERT dbo.[ORDER]
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\order_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
--- ORDER_DISH --
-BULK INSERT ORDER_DISH
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\order_dish_data.csv'
-WITH
-(
-    FIELDTERMINATOR = ',',
-    ROWTERMINATOR = '\n',
-	FIRSTROW = 2,
-    CODEPAGE = '65001' -- UTF-8
-);
-GO
 
-
-GO
--- WORK_HISTORY --
-BULK INSERT WORK_HISTORY
-FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\work_history_data.csv'
+/*
+-- AREA -- 
+BULK INSERT AREA
+FROM 'D:\KHTN\NAM3\1st_Semester\CSDLNC\18_12\area_data.csv'
 WITH
 (
     FIELDTERMINATOR = ',',
@@ -525,4 +522,13 @@ WITH
 	FIRSTROW = 2,
     CODEPAGE = '65001' -- UTF-8
 );
+GO
 */
+
+
+
+
+
+
+
+

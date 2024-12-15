@@ -1,0 +1,101 @@
+ACCOUNT_ID,USERNAME,PASSWORD,ROLE,EMPLOYEE_ID,CUSTOMER_ID
+A001,achang,123,Quản lý chi nhánh,E000003,
+A002,greenwilliam,123,Quản lý chi nhánh,E000015,
+A003,thull,123,Quản lý chi nhánh,E000013,
+A004,nhoward,123,Quản lý chi nhánh,E000001,
+A005,juancampos,123,Quản lý chi nhánh,E000006,
+A006,vanessa89,123,Quản lý chi nhánh,E000002,
+A007,kyleblair,123,Quản lý chi nhánh,E000004,
+A008,thomas15,123,Quản lý chi nhánh,E000005,
+A009,ostewart,123,Quản lý chi nhánh,E000012,
+A010,tammywoods,123,Quản lý chi nhánh,E000011,
+A011,bryan80,123,Quản lý chi nhánh,E000009,
+A012,cortezraymond,123,Quản lý chi nhánh,E000010,
+A013,salazarmaria,123,Quản lý chi nhánh,E000014,
+A014,john51,123,Quản lý chi nhánh,E000008,
+A015,sallywalker,123,Quản lý chi nhánh,E000007,
+A016,lindawest,123,Nhân viên,E004237,
+A017,kaisernancy,123,Nhân viên,E014652,
+A018,jrodriguez,123,Nhân viên,E001307,
+A019,jasmine85,123,Nhân viên,E004411,
+A020,tamaramorrison,123,Nhân viên,E012459,
+A021,sean96,123,Nhân viên,E006532,
+A022,barbara42,123,Nhân viên,E010776,
+A023,lorijohnson,123,Nhân viên,E005456,
+A024,thomas12,123,Nhân viên,E013413,
+A025,sandrakirby,123,Nhân viên,E013326,
+A026,hmassey,123,Nhân viên,E003542,
+A027,aimee33,123,Nhân viên,E013034,
+A028,criley,123,Nhân viên,E006578,
+A029,skeller,123,Nhân viên,E012781,
+A030,christopher91,123,Nhân viên,E007144,
+A031,vmatthews,123,Nhân viên,E011420,
+A032,johndennis,123,Nhân viên,E003963,
+A033,thorntonnathan,123,Nhân viên,E009906,
+A034,marvincabrera,123,Nhân viên,E000481,
+A035,loganmelissa,123,Nhân viên,E011847,
+A036,brandonberry,123,Nhân viên,E007284,
+A037,johnsoncynthia,123,Nhân viên,E012696,
+A038,myersmitchell,123,Nhân viên,E004081,
+A039,johnsonandrew,123,Nhân viên,E001840,
+A040,jennifermendoza,123,Nhân viên,E002675,
+A041,gilesandrew,123,Nhân viên,E009782,
+A042,qoliver,123,Nhân viên,E014875,
+A043,walkerdeborah,123,Nhân viên,E011797,
+A044,ryan08,123,Nhân viên,E003506,
+A045,gwilliams,123,Nhân viên,E002529,
+A046,wgonzalez,123,Nhân viên,E010767,
+A047,kmassey,123,Nhân viên,E003484,
+A048,heidiharris,123,Nhân viên,E014940,
+A049,kramereric,123,Nhân viên,E010315,
+A050,matthewking,123,Nhân viên,E011900,
+A051,awade,123,Nhân viên,E013765,
+A052,kmaldonado,123,Nhân viên,E011561,
+A053,deborah64,123,Nhân viên,E004998,
+A054,annsmith,123,Nhân viên,E007549,
+A055,rogersbrandon,123,Nhân viên,E007487,
+A056,dennis75,123,Nhân viên,E006835,
+A057,emily99,123,Nhân viên,E010059,
+A058,jenniferhughes,123,Nhân viên,E010326,
+A059,fpoole,123,Nhân viên,E001192,
+A060,wheelerholly,123,Nhân viên,E003669,
+A061,johnwalsh,123,Khách hàng,,025970C
+A062,rpage,123,Khách hàng,,082532C
+A063,sjohnson,123,Khách hàng,,059582C
+A064,tbarton,123,Khách hàng,,032414C
+A065,martincaleb,123,Khách hàng,,086450C
+A066,seandyer,123,Khách hàng,,065100C
+A067,hensontroy,123,Khách hàng,,095961C
+A068,mary06,123,Khách hàng,,092764C
+A069,amymccarty,123,Khách hàng,,050201C
+A070,monroedavid,123,Khách hàng,,078625C
+A071,moraleserika,123,Khách hàng,,074889C
+A072,aaron00,123,Khách hàng,,003478C
+A073,leecharlene,123,Khách hàng,,023306C
+A074,morganramirez,123,Khách hàng,,003402C
+A075,craignash,123,Khách hàng,,051704C
+A076,bburton,123,Khách hàng,,082208C
+A077,robin14,123,Khách hàng,,074461C
+A078,desireeroth,123,Khách hàng,,049265C
+A079,darin24,123,Khách hàng,,059971C
+A080,williamsjamie,123,Khách hàng,,072119C
+A081,angela59,123,Khách hàng,,077484C
+A082,mathissusan,123,Khách hàng,,063951C
+A083,djoseph,123,Khách hàng,,041731C
+A084,iwatson,123,Khách hàng,,084082C
+A085,jaredmatthews,123,Khách hàng,,046025C
+A086,taylorjoseph,123,Khách hàng,,028743C
+A087,kristine15,123,Khách hàng,,014522C
+A088,williamsfrank,123,Khách hàng,,062164C
+A089,michael82,123,Khách hàng,,037101C
+A090,danny30,123,Khách hàng,,020452C
+A091,hayden81,123,Khách hàng,,072066C
+A092,richard54,123,Khách hàng,,064310C
+A093,zwells,123,Khách hàng,,014258C
+A094,david17,123,Khách hàng,,033200C
+A095,vjohnson,123,Khách hàng,,050055C
+A096,samanthasims,123,Quản lý công ty,,
+A097,odrake,123,Quản lý công ty,,
+A098,joneschristophe,123,Quản lý công ty,,
+A099,brucesmith,123,Quản lý công ty,,
+A100,shawkins,123,Quản lý công ty,,
