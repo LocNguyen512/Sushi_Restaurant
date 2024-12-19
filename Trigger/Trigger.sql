@@ -13,30 +13,27 @@ BEGIN
         WHERE EMPLOYEE_ID IS NOT NULL AND CUSTOMER_ID IS NOT NULL
     )
     BEGIN
+		ROLLBACK
         RAISERROR('EMPLOYEE_ID và CUSTOMER_ID không thể cùng tồn tại.', 16,1)
     END
 
-    -- Kiểm tra nếu cả EMPLOYEE_ID và CUSTOMER_ID đều NULL thì ROLE phải là "Quản lý công ty"
-    IF EXISTS (
-        SELECT *
-        FROM INSERTED
-        WHERE EMPLOYEE_ID IS NULL AND CUSTOMER_ID IS NULL AND ROLE NOT IN ( N'Quản lý công ty')
-    )
-    BEGIN
-		RAISERROR('Nếu EMPLOYEE_ID và CUSTOMER_ID đều trống, ROLE phải là "Quản lý công ty".', 16,1)
-    END
+	-- Xác định ROLE dựa trên các điều kiện ()
+		UPDATE ACCOUNT
+		SET ROLE = 
+			CASE 
+				WHEN I.CUSTOMER_ID IS NOT NULL THEN N'Khách hàng'
+				WHEN I.EMPLOYEE_ID IS NOT NULL THEN 
+					CASE 
+						WHEN D.DEPARTMENT_NAME = N'Quản lý chi nhánh' THEN N'Quản lý chi nhánh'
+						ELSE N'Nhân viên'
+					END
+				ELSE N'Quản lý công ty'
+			END
+		FROM INSERTED I
+		LEFT JOIN EMPLOYEE E ON I.EMPLOYEE_ID = E.EMPLOYEE_ID
+		LEFT JOIN DEPARTMENT D ON E.DEPARTMENT_ID = D.DEPARTMENT_ID
+		WHERE ACCOUNT.ACCOUNT_ID = I.ACCOUNT_ID;
 
-    -- Kiểm tra ROLE phải hợp lệ (VÌ ROLE LÚC INSERT CÓ THỂ ĐỂ NULL -> NẾU ROLE KHÁC NULL THÌ TRIGGER CHECK)
-    IF EXISTS (
-        SELECT *
-        FROM INSERTED
-        WHERE ROLE NOT IN (N'Khách hàng', N'Quản lý chi nhánh', N'Nhân viên', N'Quản lý công ty')
-    )
-    BEGIN
-		ROLLBACK
-        RAISERROR('ROLE không hợp lệ.', 16,1)
-    END
-	
 END
 
 GO
@@ -97,7 +94,7 @@ BEGIN
 END
 
 GO
---- TRIGGER CHO BẢNG CUSTOMER
+---------------------------------------- TRIGGER CHO BẢNG CUSTOMER ----------------------------------------
 CREATE OR ALTER TRIGGER TRG_CUSTOMER_VALIDITY
 ON CUSTOMER
 FOR INSERT, UPDATE
@@ -114,6 +111,8 @@ BEGIN
         RAISERROR('EMAIL không đúng định dạng đuôi @gmail.com.', 16, 1);
     END;
 END;
+
+
 GO
 create trigger trg_membership_card
 on MEMBERSHIP_CARD
