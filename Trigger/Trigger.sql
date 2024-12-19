@@ -114,8 +114,8 @@ BEGIN
         RAISERROR('EMAIL không đúng định dạng đuôi @gmail.com.', 16, 1);
     END;
 END;
-
-create trigger trg_insert_membership_card
+GO
+create trigger trg_membership_card
 on MEMBERSHIP_CARD
 for insert, update
 AS
