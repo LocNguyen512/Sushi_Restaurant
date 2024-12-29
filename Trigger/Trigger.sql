@@ -434,6 +434,21 @@ ON ONLINE_ORDER
 FOR INSERT, UPDATE
 AS
 BEGIN
+	-- Kiểm tra rằng OORDER_ID trong ONLINE_ORDER phải tồn tại trong ORDER_ với ORDER_TYPE = 'Online'
+    IF EXISTS (
+        SELECT *
+        FROM INSERTED
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM ORDER_
+            WHERE ORDER_ID = INSERTED.OORDER_ID AND ORDER_TYPE = 'Online'
+        )
+    )
+    BEGIN
+		ROLLBACK
+        RAISERROR (N'OORDER_ID phải tồn tại trong bảng ORDER_ với loại đơn hàng là "Online".', 16, 1)
+    END
+
     -- Kiểm tra điều kiện: ARRIVAL_TIME phải >= OPEN_TIME và <= CLOSE_TIME
     IF EXISTS (
         SELECT *
@@ -496,6 +511,21 @@ ON OFFLINE_ORDER
 FOR INSERT, UPDATE
 AS
 BEGIN
+	-- Kiểm tra rằng OFORDER_ID trong OFFLINE_ORDER phải tồn tại trong ORDER_ với ORDER_TYPE = 'Offline'
+    IF EXISTS (
+        SELECT *
+        FROM INSERTED
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM ORDER_
+            WHERE ORDER_ID = INSERTED.OFORDER_ID AND ORDER_TYPE = 'Offline'
+        )
+    )
+    BEGIN
+		ROLLBACK
+        RAISERROR (N'OFORDER_ID phải tồn tại trong bảng ORDER_ với loại đơn hàng là "Offline".', 16, 1)
+    END
+
     -- Kiểm tra điều kiện của nhân viên
     IF EXISTS (
         SELECT *
@@ -516,3 +546,24 @@ BEGIN
 END
 GO
 
+---------------------------------------- TRIGGER CHO BẢNG DELIVERY_ORDER ----------------------------------------
+CREATE OR ALTER TRIGGER TRG_DELIVERY_ORDER
+ON DELIVERY_ORDER
+FOR INSERT, UPDATE
+AS
+BEGIN
+    -- Kiểm tra rằng DORDER_ID trong DELIVERY_ORDER phải tồn tại trong ORDER_ với ORDER_TYPE = 'Delivery'
+    IF EXISTS (
+        SELECT *
+        FROM INSERTED
+        WHERE NOT EXISTS (
+            SELECT *
+            FROM ORDER_
+            WHERE ORDER_ID = INSERTED.DORDER_ID AND ORDER_TYPE = 'Delivery'
+        )
+    )
+    BEGIN
+		ROLLBACK
+        RAISERROR (N'DORDER_ID phải tồn tại trong bảng ORDER_ với loại đơn hàng là "Delivery".', 16, 1)
+    END
+END
