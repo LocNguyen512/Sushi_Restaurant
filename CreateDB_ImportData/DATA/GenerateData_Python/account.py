@@ -7,7 +7,7 @@ faker = Faker()
 Faker.seed(0)
 
 # Tạo danh sách account_id
-account_ids = [f"A{str(i).zfill(3)}" for i in range(1, 101)]
+account_ids = [f"A{str(i).zfill(3)}" for i in range(1, 1000)]
 
 # Đọc dữ liệu từ các file CSV đầu vào
 with open('employee_data.csv', encoding='utf-8') as emp_file:
@@ -32,29 +32,29 @@ selected_branch_managers = random.sample(branch_manager_employees, 15)
 remaining_employees = [
     emp['EMPLOYEE_ID'] for emp in employee_data if emp['EMPLOYEE_ID'] not in selected_branch_managers
 ]
-selected_employees = selected_branch_managers + random.sample(remaining_employees, 45)
+selected_employees = selected_branch_managers + random.sample(remaining_employees, 315 - 15)
 selected_customers = random.sample(
-    [cust['CUSTOMER_ID'] for cust in customer_data], 40
+    [cust['CUSTOMER_ID'] for cust in customer_data], 679
 )
 
 # Tạo dữ liệu cho bảng ACCOUNT
 accounts = []
 
-for i in range(100):
+for i in range(999):
     account_id = account_ids[i]
-    username = faker.unique.user_name()[:15]
+    username = faker.unique.user_name()[:20]
     password = '123'
 
-    if i < 60:  # 60 account với employee_id
+    if i < 315:  # 315 account với employee_id
         employee_id = selected_employees[i]
         customer_id = ''
         if employee_id in selected_branch_managers:
             role = "Quản lý chi nhánh"
         else:
             role = "Nhân viên"
-    elif i < 100 - 5:  # 40 account với customer_id
+    elif i < 999 - 5:  # 679 account với customer_id
         employee_id = ''
-        customer_id = selected_customers[i - 60]
+        customer_id = selected_customers[i - 315]
         role = "Khách hàng"
     else:  # 5 account quản lý công ty
         employee_id = ''
