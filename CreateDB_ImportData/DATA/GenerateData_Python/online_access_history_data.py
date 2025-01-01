@@ -1,91 +1,120 @@
 import csv
 import random
-from faker import Faker
 from datetime import datetime, timedelta
+from faker import Faker
 
-# Tạo instance của Faker
-fake = Faker()
+# Initialize Faker
+faker = Faker()
 Faker.seed(0)
 random.seed(0)
 
-# Đọc dữ liệu từ file CSV
-def read_csv(file_name):
-    with open(file_name, mode='r', encoding='utf-8') as file:
-        reader = csv.DictReader(file)
-        return [row for row in reader]
+# Helper function to randomize dates
+def random_date(start_date, end_date):
+    delta = end_date - start_date
+    random_days = random.randint(0, delta.days)
+    return start_date + timedelta(days=random_days)
 
-# Ghi dữ liệu xuống file CSV
-def write_to_csv(file_name, data):
-    fieldnames = ['DATE_ACCESSED', 'TIME_ACCESSED', 'CUSTOMER_ID', 'SESSION_DURATION']
-    with open(file_name, mode='w', encoding='utf-8', newline='') as file:
-        writer = csv.DictWriter(file, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(data)
-
-# Đọc dữ liệu từ file CSV
-account_data = read_csv('account_data.csv')
-employee_data = read_csv('employee_data.csv')
-
-# Lấy danh sách customer_id và nhân bản để mỗi customer_id xuất hiện 5 lần
-customer_ids = [row['CUSTOMER_ID'] for row in account_data if row['CUSTOMER_ID']]
-customer_ids = customer_ids * 5
-
-# Lấy start_date_work nhỏ nhất từ employee_data.csv
-start_date_works = [datetime.strptime(row['START_DATE_WORK'], '%Y-%m-%d') for row in employee_data if row['START_DATE_WORK']]
-start_date_work_min = min(start_date_works)
-
-# Hàm random date_accessed theo tỷ lệ 40% trước 1/1/2018 và 60% sau 1/1/2018
-def random_date_accessed():
-    jan_1_2018 = datetime(2018, 1, 1)
-    if random.random() < 0.4:
-        return fake.date_between(start_date=start_date_work_min, end_date=jan_1_2018 - timedelta(days=1))
-    else:
-        return fake.date_between(start_date=jan_1_2018, end_date='today')
-
-# Hàm random time_accessed từ 5:00 sáng đến 11:55 đêm
-def random_time_accessed():
-    # Random giờ từ 5 đến 23 và phút từ 0 đến 55
+# Helper function to randomize time
+def random_time():
     hour = random.randint(5, 23)
     minute = random.randint(0, 55)
-    second = random.randint(0, 59)
-    return f"{hour:02}:{minute:02}:{second:02}"
+    return datetime.strptime(f"{hour}:{minute:02}", "%H:%M").time()
 
+# Load data from input files
+with open("customer_data.csv", "r", encoding="utf-8") as f:
+    customer_reader = csv.DictReader(f)
+    customers = list(customer_reader)
+    customer_ids = [customer["CUSTOMER_ID"] for customer in customers]
 
-# Hàm random session_duration từ 60 đến 5000 (giây)
-def random_session_duration():
-    return random.randint(60, 5000)
+with open("order_data.csv", "r", encoding="utf-8") as f:
+    order_reader = csv.DictReader(f)
+    orders = list(order_reader)
 
-# Tạo dữ liệu cho bảng ONLINE_ACCESS_HISTORY
-def generate_online_access_history_data():
-    records = []
-    used_dates = {}
+with open("employee_data.csv", "r", encoding="utf-8") as f:
+    employee_reader = csv.DictReader(f)
+    employees = list(employee_reader)
 
-    for customer_id in customer_ids:
-        date_accessed = random_date_accessed()
-        # Đảm bảo không trùng date_accessed với cùng customer_id
-        while customer_id in used_dates and date_accessed in used_dates[customer_id]:
-            date_accessed = random_date_accessed()
+# Determine the earliest start date among employees
+start_dates = [datetime.strptime(emp["START_DATE_WORK"], "%Y-%m-%d") for emp in employees]
+earliest_start_date = min(start_dates)
 
-        if customer_id not in used_dates:
-            used_dates[customer_id] = set()
-        used_dates[customer_id].add(date_accessed)
-
-        time_accessed = random_time_accessed()
-        session_duration = random_session_duration()
-
-        records.append({
-            'DATE_ACCESSED': date_accessed.strftime('%Y-%m-%d'),
-            'TIME_ACCESSED': time_accessed,
-            'CUSTOMER_ID': customer_id,
-            'SESSION_DURATION': session_duration
+# Organize orders by customer_id
+orders_by_customer = {}
+for order in orders:
+    if order["ORDER_TYPE"] == "Online":
+        customer_id = order["CUSTOMER_ID"]
+        if customer_id not in orders_by_customer:
+            orders_by_customer[customer_id] = []
+        orders_by_customer[customer_id].append({
+            "ORDER_DATE": datetime.strptime(order["ORDER_DATE"], "%Y-%m-%d"),
+            "ORDER_TIME": datetime.strptime(order["ORDER_TIME"], "%H:%M:%S").time()
         })
 
-    return records
+# Generate online access history data
+online_access_history = []
+date_cutoff = datetime(2018, 1, 1)
 
-# Generate data
-online_access_history_data = generate_online_access_history_data()
+for customer_id in set(customer_ids):
+    customer_orders = orders_by_customer.get(customer_id, [])
+    session_durations = [random.randint(60, 36000) for _ in range(5)]
+    date_accessed_set = set()
 
-# Write data to CSV
-write_to_csv('online_access_history_data.csv', online_access_history_data)
+    # Add online order access data
+    for i, order in enumerate(customer_orders):
+        if i >= 5:
+            break
+        session_duration = session_durations[i]
+        time_accessed = (datetime.combine(datetime.today(), order["ORDER_TIME"]) - timedelta(seconds=session_duration)).time()
+        online_access_history.append({
+            "DATE_ACCESSED": order["ORDER_DATE"].strftime("%Y-%m-%d"),
+            "TIME_ACCESSED": time_accessed.strftime("%H:%M:%S"),
+            "CUSTOMER_ID": customer_id,
+            "SESSION_DURATION": session_duration
+        })
+        date_accessed_set.add(order["ORDER_DATE"])
 
-print("File online_access_history_data.csv đã được tạo thành công.")
+    # Add remaining data for customers with online orders
+    while len(date_accessed_set) < 5:
+        if random.random() <= 0.4:
+            date_accessed = random_date(earliest_start_date, date_cutoff)
+        else:
+            date_accessed = random_date(date_cutoff + timedelta(days=1), datetime.today())
+
+        if date_accessed not in date_accessed_set:
+            session_duration = random.randint(60, 36000)
+            time_accessed = random_time()
+            online_access_history.append({
+                "DATE_ACCESSED": date_accessed.strftime("%Y-%m-%d"),
+                "TIME_ACCESSED": time_accessed.strftime("%H:%M:%S"),
+                "CUSTOMER_ID": customer_id,
+                "SESSION_DURATION": session_duration
+            })
+            date_accessed_set.add(date_accessed)
+
+    # Add data for customers without online orders
+    if not customer_orders:
+        while len(date_accessed_set) < 5:
+            if random.random() <= 0.4:
+                date_accessed = random_date(earliest_start_date, date_cutoff)
+            else:
+                date_accessed = random_date(date_cutoff + timedelta(days=1), datetime.today())
+
+            if date_accessed not in date_accessed_set:
+                session_duration = random.randint(60, 36000)
+                time_accessed = random_time()
+                online_access_history.append({
+                    "DATE_ACCESSED": date_accessed.strftime("%Y-%m-%d"),
+                    "TIME_ACCESSED": time_accessed.strftime("%H:%M:%S"),
+                    "CUSTOMER_ID": customer_id,
+                    "SESSION_DURATION": session_duration
+                })
+                date_accessed_set.add(date_accessed)
+
+# Write to CSV
+with open("online_access_history_data.csv", "w", encoding="utf-8", newline="") as f:
+    fieldnames = ["DATE_ACCESSED", "TIME_ACCESSED", "CUSTOMER_ID", "SESSION_DURATION"]
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(online_access_history)
+
+print("Data generation complete. Check 'online_access_history_data.csv'.")
