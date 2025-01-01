@@ -1,6 +1,6 @@
 import csv
 import random
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date, time
 from faker import Faker
 
 # Initialize Faker
@@ -18,7 +18,7 @@ def random_date(start_date, end_date):
 def random_time():
     hour = random.randint(5, 23)
     minute = random.randint(0, 55)
-    return datetime.strptime(f"{hour}:{minute:02}", "%H:%M").time()
+    return time(hour, minute)
 
 # Load data from input files
 with open("customer_data.csv", "r", encoding="utf-8") as f:
@@ -35,7 +35,7 @@ with open("employee_data.csv", "r", encoding="utf-8") as f:
     employees = list(employee_reader)
 
 # Determine the earliest start date among employees
-start_dates = [datetime.strptime(emp["START_DATE_WORK"], "%Y-%m-%d") for emp in employees]
+start_dates = [datetime.strptime(emp["START_DATE_WORK"], "%Y-%m-%d").date() for emp in employees]
 earliest_start_date = min(start_dates)
 
 # Organize orders by customer_id
@@ -46,13 +46,13 @@ for order in orders:
         if customer_id not in orders_by_customer:
             orders_by_customer[customer_id] = []
         orders_by_customer[customer_id].append({
-            "ORDER_DATE": datetime.strptime(order["ORDER_DATE"], "%Y-%m-%d"),
+            "ORDER_DATE": datetime.strptime(order["ORDER_DATE"], "%Y-%m-%d").date(),
             "ORDER_TIME": datetime.strptime(order["ORDER_TIME"], "%H:%M:%S").time()
         })
 
 # Generate online access history data
 online_access_history = []
-date_cutoff = datetime(2018, 1, 1)
+date_cutoff = date(2018, 1, 1)
 
 for customer_id in set(customer_ids):
     customer_orders = orders_by_customer.get(customer_id, [])
@@ -64,10 +64,11 @@ for customer_id in set(customer_ids):
         if i >= 5:
             break
         session_duration = session_durations[i]
-        time_accessed = (datetime.combine(datetime.today(), order["ORDER_TIME"]) - timedelta(seconds=session_duration)).time()
+        order_datetime = datetime.combine(order["ORDER_DATE"], order["ORDER_TIME"])
+        time_accessed = (order_datetime - timedelta(seconds=session_duration)).time()
         online_access_history.append({
-            "DATE_ACCESSED": order["ORDER_DATE"].strftime("%Y-%m-%d"),
-            "TIME_ACCESSED": time_accessed.strftime("%H:%M:%S"),
+            "DATE_ACCESSED": order["ORDER_DATE"],
+            "TIME_ACCESSED": time_accessed,
             "CUSTOMER_ID": customer_id,
             "SESSION_DURATION": session_duration
         })
@@ -78,14 +79,14 @@ for customer_id in set(customer_ids):
         if random.random() <= 0.4:
             date_accessed = random_date(earliest_start_date, date_cutoff)
         else:
-            date_accessed = random_date(date_cutoff + timedelta(days=1), datetime.today())
+            date_accessed = random_date(date_cutoff + timedelta(days=1), datetime.today().date())
 
         if date_accessed not in date_accessed_set:
             session_duration = random.randint(60, 36000)
             time_accessed = random_time()
             online_access_history.append({
-                "DATE_ACCESSED": date_accessed.strftime("%Y-%m-%d"),
-                "TIME_ACCESSED": time_accessed.strftime("%H:%M:%S"),
+                "DATE_ACCESSED": date_accessed,
+                "TIME_ACCESSED": time_accessed,
                 "CUSTOMER_ID": customer_id,
                 "SESSION_DURATION": session_duration
             })
@@ -97,14 +98,14 @@ for customer_id in set(customer_ids):
             if random.random() <= 0.4:
                 date_accessed = random_date(earliest_start_date, date_cutoff)
             else:
-                date_accessed = random_date(date_cutoff + timedelta(days=1), datetime.today())
+                date_accessed = random_date(date_cutoff + timedelta(days=1), datetime.today().date())
 
             if date_accessed not in date_accessed_set:
                 session_duration = random.randint(60, 36000)
                 time_accessed = random_time()
                 online_access_history.append({
-                    "DATE_ACCESSED": date_accessed.strftime("%Y-%m-%d"),
-                    "TIME_ACCESSED": time_accessed.strftime("%H:%M:%S"),
+                    "DATE_ACCESSED": date_accessed,
+                    "TIME_ACCESSED": time_accessed,
                     "CUSTOMER_ID": customer_id,
                     "SESSION_DURATION": session_duration
                 })
@@ -115,6 +116,12 @@ with open("online_access_history_data.csv", "w", encoding="utf-8", newline="") a
     fieldnames = ["DATE_ACCESSED", "TIME_ACCESSED", "CUSTOMER_ID", "SESSION_DURATION"]
     writer = csv.DictWriter(f, fieldnames=fieldnames)
     writer.writeheader()
-    writer.writerows(online_access_history)
+    for row in online_access_history:
+        writer.writerow({
+            "DATE_ACCESSED": row["DATE_ACCESSED"].strftime("%Y-%m-%d"),
+            "TIME_ACCESSED": row["TIME_ACCESSED"].strftime("%H:%M:%S"),
+            "CUSTOMER_ID": row["CUSTOMER_ID"],
+            "SESSION_DURATION": row["SESSION_DURATION"]
+        })
 
 print("Data generation complete. Check 'online_access_history_data.csv'.")
