@@ -541,7 +541,7 @@ BEGIN
 
             -- C?p nh?t tr?ng thái bàn TABLE_
             UPDATE TABLE_
-            SET TABLE_STATUS = N'Còn tr?ng'
+            SET TABLE_STATUS = N'Còn trống'
             FROM TABLE_ T
             JOIN OFFLINE_ORDER O ON T.TABLE_NUM = O.TABLE_NUMBER
             WHERE O.OFORDER_ID = @ORDER_ID AND T.BRANCH_ID = @BRANCH_ID;
@@ -1010,6 +1010,9 @@ BEGIN
 END;
 
 
+
+
+
 GO
 CREATE PROCEDURE updateMembershipCardByYear
 AS
@@ -1078,6 +1081,100 @@ BEGIN
     DROP TABLE #TempMembershipCard;
 END;
 
+
+
+
+-- Tạo stored procedure addResource
+
+GO
+CREATE PROCEDURE addResource
+    @branchId CHAR(7),
+    @fullName NVARCHAR(255),
+    @gender NVARCHAR(3),
+    @dob DATE,
+    @startDayWork DATE,
+    @departmentId CHAR(4),
+    @hashedPassword NVARCHAR(255) -- Mật khẩu đã băm từ phía ứng dụng
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Biến để lưu giá trị
+        DECLARE @currentDate DATE = CONVERT(DATE, GETDATE());
+        DECLARE @salary INT = 20000;
+        DECLARE @employeeId CHAR(7);
+        DECLARE @accountId CHAR(4);
+        DECLARE @username NVARCHAR(255);
+        DECLARE @role NVARCHAR(50);
+
+        -- Lấy salary của department (nếu có)
+        SELECT TOP 1 @salary = SALARY
+        FROM EMPLOYEE
+        WHERE DEPARTMENT_ID = @departmentId;
+
+        -- Lấy EMPLOYEE_ID cao nhất và cộng thêm 1
+        SELECT @employeeId = 'E' + RIGHT('000000' + CAST(ISNULL(MAX(CAST(SUBSTRING(EMPLOYEE_ID, 2, 6) AS INT)), 0) + 1 AS VARCHAR), 6)
+        FROM EMPLOYEE;
+
+        -- Lấy ACCOUNT_ID cao nhất và cộng thêm 1
+        SELECT @accountId = 'A' + RIGHT('000000' + CAST(ISNULL(MAX(CAST(SUBSTRING(ACCOUNT_ID, 2, 3) AS INT)), 0) + 1 AS VARCHAR), 6)
+        FROM ACCOUNT;
+
+        -- Tạo username từ họ tên và ngày sinh
+        DECLARE @dobString NVARCHAR(50) = FORMAT(@dob, 'ddMMyyyy');
+        DECLARE @nameParts TABLE (NamePart NVARCHAR(50));
+        INSERT INTO @nameParts (NamePart)
+        SELECT value
+        FROM STRING_SPLIT(@fullName, ' ');
+
+        DECLARE @initials NVARCHAR(50) = '';
+        DECLARE @part NVARCHAR(50);
+
+        DECLARE nameCursor CURSOR FOR SELECT NamePart FROM @nameParts;
+        OPEN nameCursor;
+        FETCH NEXT FROM nameCursor INTO @part;
+
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+            SET @initials = @initials + LOWER(LEFT(@part, 1));
+            FETCH NEXT FROM nameCursor INTO @part;
+        END;
+
+        CLOSE nameCursor;
+        DEALLOCATE nameCursor;
+
+        SET @username = @initials + @dobString;
+
+        -- Xác định role
+        SELECT @role = CASE
+                          WHEN DEPARTMENT_NAME = N'Quản lý chi nhánh' THEN N'Quản lý chi nhánh'
+                          ELSE N'Nhân viên'
+                       END
+        FROM DEPARTMENT
+        WHERE DEPARTMENT_ID = @departmentId;
+
+        -- Insert vào bảng EMPLOYEE
+        INSERT INTO EMPLOYEE (EMPLOYEE_ID, FULL_NAME, DATE_OF_BIRTH, GENDER, SALARY, START_DATE_WORK, DEPARTMENT_ID)
+        VALUES (@employeeId, @fullName, @dob, @gender, @salary, @startDayWork, @departmentId);
+
+        -- Insert vào bảng ACCOUNT
+        INSERT INTO ACCOUNT (ACCOUNT_ID, USERNAME, PASSWORD, ROLE, EMPLOYEE_ID)
+        VALUES (@accountId, @username, @hashedPassword, @role, @employeeId);
+
+        -- Insert vào bảng WORK_HISTORY
+        INSERT INTO WORK_HISTORY (BRANCH_START_DATE, EMPLOYEE_ID, BRANCH_ID)
+        VALUES (@startDayWork, @employeeId, @branchId);
+
+        -- Trả về kết quả thành công
+        SELECT 1 AS Success, 'Resource added successfully' AS Message;
+
+    END TRY
+    BEGIN CATCH
+        -- Trả về lỗi
+        SELECT 0 AS Success, ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+END;
 
 
 
